@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Homework_04</title>
+    </head>
+    <body>
+        <script>
+            function tree(height, branch) {
+                var a = branch;
+                var b = '';
+                var i = 0;
+                if (height > 0 && branch.length === 1) {
+                    while (i < height) {
+                        i++;
+                        b = b + ' '.repeat(height - i) + a + '\n';
+                        a = a + branch + branch;
+                    }
+                    alert(b);
+                } else {
+                    alert('Fuck you');
+                }
+            }
+
+            var tree_height = prompt('Введи высоту дерева');
+            var tree_branch = prompt('Введи из чего будет сделано твоё дерево');
+            tree_height = parseInt(tree_height, 10);
+            console.log(tree_height);
+            tree(tree_height, tree_branch);
+
+//class work
+//             for (var i = 100; i < 200; i++) {
+//                 if (i % 5 === 0) {
+//                     console.log(i);
+//                 }
+//             }
+//             var mas = [1, 'f', 4, 'r', 5, 6, 'g', 'f'];
+//             var sum = 0;
+//             for (var i = 0; i < mas.length; i++) {
+//                 if (isFinite(mas[i])){
+//                     sum = sum + mas[i];
+//                 }
+//             }
+//             alert(sum);
+            function f (a, b, c) {
+                function sum (a1, b1) {
+                    return a1 + b1;
+                }
+                if (a === undefined){
+                    a = 2;
+                }
+                if (b === undefined){
+                    b = 3;
+                }
+                if (typeof c === 'function'){
+                    return c(a, b);
+                }else {
+                    return sum(a, b);
+                }
+            }
+            console.log(f());
+            console.log(f(undefined,undefined,5));
+            console.log(f(1,2,3));
+            console.log(f(5,'2',tree));
+        </script>
+    </body>
+</html>
